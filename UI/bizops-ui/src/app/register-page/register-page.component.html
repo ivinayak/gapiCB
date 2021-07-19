@@ -1,0 +1,10 @@
+
+    <p>Welcome
+        {{user?.getBasicProfile().getEmail() | json}}</p>
+    <h2>Continue as :</h2>
+    <div *ngFor="let userType of userTypeList">
+        <input type="checkbox" [name]="userType.type" [checked]="userType.isChecked" (change)="onChange(userType.type)">
+        {{userType.type}}
+    </div>
+
+    <button (click)="signUp()">Sign Up</button>
